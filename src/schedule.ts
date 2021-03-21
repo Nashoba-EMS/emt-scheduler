@@ -7,7 +7,21 @@ import { UserWithoutPassword } from "./types/user";
 export const buildSchedule = (
   schedule: Schedule,
   users: UserWithoutPassword[],
-  availability: ScheduleAvailability[]
+  userAvailability: ScheduleAvailability[]
 ): Schedule => {
+  // Build maps to quickly look up users and availability by user ID
+  const userIdToUser: {
+    [_id: string]: UserWithoutPassword | undefined;
+  } = {};
+  const userIdToAvailability: {
+    [_id: string]: ScheduleAvailability | undefined;
+  } = {};
+
+  users.forEach((user) => (userIdToUser[user._id] = user));
+  userAvailability.forEach(
+    (availability) =>
+      (userIdToAvailability[availability.user_id] = availability)
+  );
+
   throw new Error("Not implemented");
 };
