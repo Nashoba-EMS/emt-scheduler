@@ -7,7 +7,7 @@
   "private": false,
   "scripts": {
     "start": "yarn ts-node ./src/index.ts",
-    "eslint": "eslint --config ./.eslintrc.js --ext .js,.ts,.jsx,.tsx src/",
+    "eslint": "eslint --config ./.eslintrc.js --ext .js,.ts src/",
     "validate": "npx tsc --noEmit"
   },
   "devDependencies": {
