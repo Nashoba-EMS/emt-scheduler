@@ -1,0 +1,8 @@
+# development
+node_modules
+
+# production
+dist
+
+# macOS
+.DS_Store
